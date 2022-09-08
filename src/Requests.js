@@ -14,7 +14,7 @@ const requests = {
   return `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=${page}`
 }
 export function requestSearch(query,page){
-  return `https://api.themoviedb.org/3/search/tv?api_key=9db476c7ff7210e3afa19a2a536f7af7&language=en-US&query=${query}&page=${page}&include_adult=false`;
+  return `https://api.themoviedb.org/3/search/multi?api_key=9db476c7ff7210e3afa19a2a536f7af7&language=en-US&query=${query}&page=${page}&include_adult=false`;
 }
 
 export default requests;
