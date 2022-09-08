@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {FaSearch} from 'react-icons/fa'
 import  axios  from 'axios';
-import requests, { requestSearch } from '../Requests'
+import { requestSearch } from '../Requests'
+import { useDebouncer } from '../hooks/useDebouncer';
 
 
 const SearchBar = () => {
@@ -10,18 +11,17 @@ const SearchBar = () => {
     const [data, setData]= useState([])
     const [page, setPage]= useState(1)
     
-
-    const searchMovies = async (e) => {
-        e.preventDefault();
-        setSearchKey(e.target.value)
-            axios.get(requestSearch(searchKey,page)).then((response) =>{
-                // setData(response.data.filter(oneData => {
-                //     oneData.title.toLowerCase().contains(searchKey.toLowerCase())
-                // }))
-                setData(response.data)
+  const debounce = useDebouncer(searchKey)
+    const searchMovies = async () => {
+            axios.get(requestSearch(debounce,page)).then((response) =>{
+                setData(response?.data?.results)
             })
         console.log(data)
     }
+
+    useEffect(() => {
+      searchMovies()
+    }, [debounce])
     
     
   return (
@@ -30,7 +30,7 @@ const SearchBar = () => {
         <input type="text" 
         placeholder="Search Movies"
         className='text-slate-700 outline-none rounded  px-6 py-2 cursor-pointer'
-        onChange={(e)=>searchMovies(e)}
+        onChange={(e)=>setSearchKey(e.target.value)}
          />
 
     </div>
