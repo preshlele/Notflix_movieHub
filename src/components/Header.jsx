@@ -3,25 +3,27 @@
 
 import MoviesMenu from './MoviesMenu'
 import TvShowsMenu from './TvShowsMenu'
-import SearchBar from "./SearchBar"
 import PopularMenu from './PopularMenu'
 import {NavLink} from 'react-router-dom'
-
+import {FiMenu} from 'react-icons/fi'
 
 const Header = () => {
 
   return (
-    <div className="bg-primary h-20 flex items-center px-20 justify-between">
-      <div className="flex items-center text-white font-bold gap-10 ml-8 w-full z-[100]">
+    <div className="bg-orange-500 h-20  md:flex md:items-center md:justify-between px-20 justify-between">
+      <div className="flex items-center text-white font-bold gap-10 2xl:ml-8 w-full">
         <NavLink to="/">
-          <h1 className="text-red-600 font-bold cursor-pointer text-2xl">
-            NUTFLIX
+          <h1 className="text-red-600 font-bold font-mono cursor-pointer text-2xl">
+           MOVEEZ
           </h1>
         </NavLink>
+        <span>
+          <FiMenu></FiMenu>
+        </span>
       </div>
-      <div className="w-full mr-[460px] flex px-8 gap-3 justify-between">
-        <MoviesMenu />
-        <TvShowsMenu />
+      <div className="w-full 2xl:mr-[460px] md:flex md:items-center my-12 md:my-0 px-8 gap-3 justify-between z-[100] md:z-auto bg-green-200 relative md:static md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        <MoviesMenu  />
+        <TvShowsMenu/>
         <PopularMenu />
       </div>
 

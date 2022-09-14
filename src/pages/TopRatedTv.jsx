@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import Header from '../components/Header'
+import SingleTV from '../components/SingleTV'
 
 const TopRatedTv = () => {
 
@@ -28,17 +29,18 @@ const fetchNextPage = () => {
     <div className='w-full h-full'>
       <p className='p-4 text-3xl font-semibold'>Top Rated TV</p>
       {movies.map((item,id)=>(
-        <div key={id} item={item} className='cursor-pointer m-0  w-[160px] sm:w-[200px] md:w-60 lg:w-[300px] inline-block p-2'>
-          <img className='w-full h-auto block rounded-md'
-          src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
-          alt={'Popular movies'}
-          />
-        <div className='whitespace-normal bg-gray-100 rounded-md   py-8 drop-shadow-2xl font-semibold text-center'>
-                    <p className='truncate center px-5 scrollbar-hide h'>{item.name?item.name:item.title}</p>
-                    <p className="text-xs">{item.release_date?item.release_date:item.first_air_date}</p>
+        // <div key={id} item={item} className='cursor-pointer m-0  w-[160px] sm:w-[200px] md:w-60 lg:w-[300px] inline-block p-2'>
+        //   <img className='w-full h-auto block rounded-md'
+        //   src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+        //   alt={'Popular movies'}
+        //   />
+        // <div className='whitespace-normal bg-gray-100 rounded-md   py-8 drop-shadow-2xl font-semibold text-center'>
+        //             <p className='truncate center px-5 scrollbar-hide h'>{item.name?item.name:item.title}</p>
+        //             <p className="text-xs">{item.release_date?item.release_date:item.first_air_date}</p>
 
-        </div>
-        </div>
+        // </div>
+        // </div>
+        <SingleTV item={item} id={id} />
 
       ))}
       <div class="flex space-x-2 justify-center p-6">

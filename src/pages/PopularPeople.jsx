@@ -15,7 +15,7 @@ useEffect(() => {
   axios.get(Api).then((response) => {
     setMovies(movies.concat(response.data.results))
   })
-  console.log(movies)
+  // console.log(movies)
 
 }, [pageNumber])
 
@@ -32,7 +32,7 @@ const fetchNextPage = () => {
       <p className='p-4 text-3xl font-semibold'>Popular People</p>
       {movies.map((item,id)=>(
         <div key={id} item={item} className='cursor-pointer m-0   w-[160px] sm:w-[200px] md:w-60 lg:w-[300px] inline-block p-2'>
-          <img className='w-full h-full block rounded-md object-cover'
+          <img className='w-full h-[300px] block rounded-md object-cover'
           src={`https://image.tmdb.org/t/p/w500/${item.profile_path}`}
           alt={'Popular movies'}
           />

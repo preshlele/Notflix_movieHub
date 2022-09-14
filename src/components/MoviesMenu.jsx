@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom'
 
 const MoviesMenu = () => {
   return (
-    <Menu as="div" className=" flex flex-col items-center text-left">
+    <Menu as="div" className="flex flex-col items-center text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center rounded-md border   bg-primary px-4 py-2 text-sm font-medium text-gray-300 shadow-sm  focus:outline-none">
           Movies

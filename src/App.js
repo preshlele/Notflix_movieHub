@@ -10,6 +10,9 @@ import TopRatedTv from './pages/TopRatedTv';
 import PopularTv from './pages/PopularTv';
 import AiringToday from './pages/AiringToday';
 import PopularPeople from './pages/PopularPeople'
+import SearchResults from './pages/SearchResults';
+import ViewSingleMovie from './components/ViewSingleMovie';
+import ViewSingleTV from './components/ViewSingleTV';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path='tv/popular' element={<PopularTv/>} />
         <Route path='tv/airing-today' element={<AiringToday/>} />
         <Route path='popular-people' element={<PopularPeople/>} />
+        <Route path='search-results' element={<SearchResults/>} />
+        <Route path='/movie/:id' element={<ViewSingleMovie/>} />
+        <Route path='/tv/:id' element={<ViewSingleTV/>} />
       </Routes>
       
 
