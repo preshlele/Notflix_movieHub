@@ -16,7 +16,7 @@ const SingleMovie = ({ item, id }) => {
       >
        
         <img
-          className="w-full  block rounded-md"
+          className="w-full h-[200px]  block rounded-md object-cover"
           src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path ? item.backdrop_path : item.profile_path}`}
           alt={"Popular movies"}
         />
@@ -26,6 +26,7 @@ const SingleMovie = ({ item, id }) => {
           </p>
           <p className="text-xs">
             {item.release_date ? item.release_date : item.first_air_date}
+            
           </p>
         </div>
       </div>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { requestSearch } from "../Requests";
 import { useDebouncer } from "../hooks/useDebouncer";
 import SingleMovie from "../components/SingleMovie";
-
+import Button from "../components/Button"
 const SearchResults= () => {
   // const apiSearch = requests.searchApi
   const [searchKey, setSearchKey] = useState("");
@@ -36,8 +36,10 @@ const SearchResults= () => {
 
   return (
     <>
+      <Button className=" left-6" />
+
       <div className="flex gap-3 justify-center ">
-        <div className="mt-10 xl:w-96">
+        <div className="mt-6 xl:w-96">
           <div className="input-group relative flex  items-stretch w-full mb-4">
             <input
               type="search"
@@ -57,31 +59,31 @@ const SearchResults= () => {
 
       {data.map((item, id) => {
         // console.log(item);
-        
+
         return (
-      
-        <SingleMovie item={item} id={id} />
-        // <div
-        //   key={id}
-        //   item={item}
-        //   className="cursor-pointer m-0 ml-0
-        //      w-[160px] sm:w-[200px] md:w-60 lg:w-[300px] inline-block p-2"
-        // >
-        //   <img
-        //     className="w-full h-auto block rounded-md object-cover"
-        //     src={`https://image.tmdb.org/t/p/w500/${
-        //       item.poster_path ? item.poster_path : item.profile_path
-        //     }`}
-        //     alt={"search Item"}
-        //   />
-        //   <div className="whitespace-normal bg-gray-100 rounded-md   py-8 drop-shadow-2xl font-semibold text-center">
-        //     <p className="truncate center px-5 scrollbar-hide ">
-        //       {item.name ? item.name : item.title}
-        //     </p>
-        //     {/* <p className="text-xs">{item.release_date?item.release_date:item.first_air_date}</p> */}
-        //   </div>
-        // </div>
-      )})}
+          <SingleMovie item={item} id={id} />
+          // <div
+          //   key={id}
+          //   item={item}
+          //   className="cursor-pointer m-0 ml-0
+          //      w-[160px] sm:w-[200px] md:w-60 lg:w-[300px] inline-block p-2"
+          // >
+          //   <img
+          //     className="w-full h-auto block rounded-md object-cover"
+          //     src={`https://image.tmdb.org/t/p/w500/${
+          //       item.poster_path ? item.poster_path : item.profile_path
+          //     }`}
+          //     alt={"search Item"}
+          //   />
+          //   <div className="whitespace-normal bg-gray-100 rounded-md   py-8 drop-shadow-2xl font-semibold text-center">
+          //     <p className="truncate center px-5 scrollbar-hide ">
+          //       {item.name ? item.name : item.title}
+          //     </p>
+          //     {/* <p className="text-xs">{item.release_date?item.release_date:item.first_air_date}</p> */}
+          //   </div>
+          // </div>
+        );
+      })}
       <div class="flex space-x-2 justify-center p-6">
         <button
           onClick={fetchNextPage}

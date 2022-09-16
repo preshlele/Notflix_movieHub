@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Button from "./Button";
+import "@fontsource/poppins";
 
 
 const ViewSingleTV = () => {
@@ -34,11 +35,11 @@ const ViewSingleTV = () => {
     <>
       <Button />
       <img
-        className="w-full h-[600px] object-cover"
+        className="w-full h-[450px] object-cover"
         src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
         alt={movie?.title}
       />
-      <div className="w-full h-full  text-black  bg-slate-200">
+      <div className="w-full h-full  text-black  bg-slate-100 font-[poppins]">
         <div className="h-full w-full inline">
           <div className="w-full  p-4 md:p-8">
             <h1 className="text-black  text-3xl md:text-5xl font-bold ">

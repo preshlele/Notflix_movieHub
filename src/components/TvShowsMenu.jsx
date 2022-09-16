@@ -1,16 +1,16 @@
-import React from 'react'
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { HiChevronDown } from "react-icons/hi"
-import classNames from 'classnames'
-import {NavLink} from 'react-router-dom'
+import React from "react";
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { HiChevronDown } from "react-icons/hi";
+import classNames from "classnames";
+import { NavLink } from "react-router-dom";
 
 const TvShowsMenu = () => {
   return (
-    <Menu as="div" className=" flex flex-col items-center text-left">
+    <Menu as="div" className=" flex flex-col text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center rounded-md border bg-primary px-4 py-2 text-sm font-medium text-gray-300 shadow-sm  focus:outline-none">
-          Tv    
+        <Menu.Button className="inline-flex w-full justify-center rounded-md border bg-presh px-4 py-2 text-sm font-medium text-gray-300 shadow-sm  focus:outline-none">
+          Tv
           <HiChevronDown className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -28,10 +28,11 @@ const TvShowsMenu = () => {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <NavLink to="/tv/popular"
+                <NavLink
+                  to="/tv/popular"
                   className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
+                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    "block px-4 py-2 text-sm"
                   )}
                 >
                   Popular
@@ -40,10 +41,11 @@ const TvShowsMenu = () => {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <NavLink to="/tv/airing-today"
+                <NavLink
+                  to="/tv/airing-today"
                   className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
+                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    "block px-4 py-2 text-sm"
                   )}
                 >
                   Airing Today
@@ -52,35 +54,36 @@ const TvShowsMenu = () => {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <NavLink to ="/tv/on-tv"
+                <NavLink
+                  to="/tv/on-tv"
                   className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
+                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    "block px-4 py-2 text-sm"
                   )}
                 >
                   On TV
                 </NavLink>
               )}
             </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <NavLink to="/tv/top-rated"
-                    type="submit"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block w-full px-4 py-2 text-left text-sm'
-                    )}
-                  >
-                    Top Rated
-                  </NavLink>
-                )}
-              </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <NavLink
+                  to="/tv/top-rated"
+                  type="submit"
+                  className={classNames(
+                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    "block w-full px-4 py-2 text-left text-sm"
+                  )}
+                >
+                  Top Rated
+                </NavLink>
+              )}
+            </Menu.Item>
           </div>
         </Menu.Items>
       </Transition>
     </Menu>
-  
-  )
-}
+  );
+};
 
-export default TvShowsMenu
+export default TvShowsMenu;

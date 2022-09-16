@@ -1,8 +1,11 @@
 import axios from 'axios'
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
-import Button from './Button';
-// import ResponsiveHeader from './ResponsiveHeader';
+import Button from '../components/Button'
+import "@fontsource/poppins";
+
+
+
 
 const ViewSingleMovie = () => {
     const [movie, setMovie] = useState({})
@@ -32,22 +35,25 @@ const ViewSingleMovie = () => {
 
   return (
     <>
-      <Button />
-      <img
-        className="w-full h-[600px] object-cover"
-        src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-        alt={movie?.title}
-      />
-      <div className="w-full h-full  text-black  bg-slate-200">
+      <div className="relative">
+        <img
+          className="w-full h-[450px] object-cover"
+          src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+          alt={movie?.title}
+        />
+        <Button />
+      </div>
+
+      <div className="w-full h-full  text-black font-[poppins]  bg-slate-100">
         <div className="h-full w-full inline">
           <div className="w-full  p-4 md:p-8">
-            <h1 className="text-black  text-3xl md:text-5xl font-bold ">
+            <h1 className="text-black  text-3xl md:text-4xl font-bold ">
               {movie?.title}
             </h1>
             <div className="flex pt-4">
               <h2>{movie?.runtime}m</h2>
               <h2 className="px-8">
-                {Math.round(movie?.vote_average * 10)}% Ratings
+                {Math.round(movie?.vote_average * 10)} % Ratings
               </h2>
             </div>
 
