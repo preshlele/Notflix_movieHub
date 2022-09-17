@@ -15,7 +15,7 @@ const Header = () => {
     <div className="bg-presh h-20  md:flex md:items-center md:justify-between px-20 justify-between">
       <div className="flex items-center  text-white font-bold gap-20 2xl:ml-8 w-full py-3 ">
         <NavLink to="/">
-          <h1 className="text-red-600 font-bold font-[poppins] cursor-pointer text-3xl ml-4">
+          <h1 className="text-white  px-2 font-bold font-[poppins] cursor-pointer text-3xl ml-4">
             Nutflix
           </h1>
         </NavLink>
