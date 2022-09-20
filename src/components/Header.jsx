@@ -16,7 +16,7 @@ const Header = () => {
       <div className="flex items-center  text-white font-bold gap-20 2xl:ml-8 w-full py-3 ">
         <NavLink to="/">
           <h1 className="text-white  px-2 font-bold font-[poppins] cursor-pointer text-3xl ml-4">
-            Nutflix
+            Notflix
           </h1>
         </NavLink>
         <div onClick={() => setOpen(!open)} className="bg-red-600 md:hidden rounded-md  text-3xl">

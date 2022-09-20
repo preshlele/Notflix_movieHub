@@ -3,7 +3,7 @@ import React from 'react'
 const FooterItemsContainer = () => {
   return (
     <>
-      <h1 className="lg:text-3xl text-2xl md:mb-0 mb-6 lg:leading normal font-semibold md:w-2/5">
+      <h1 className="lg:text-2xl text-xl md:mb-0 mb-6 lg:leading normal font-semibold md:w-2/5">
         <span className="text-red-500">Free</span> until you're ready join us
       </h1>
       <div>
